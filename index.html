@@ -54,13 +54,13 @@
 
         /* Hero Section */
       /* --- NEW HERO CSS --- */
+/* --- UPDATED HERO: FULL IMAGE + SUBHEADING --- */
 .hero {
-    height: 85vh; 
+    height: 90vh; 
     background-color: var(--lavender);
-    position: relative;
-    overflow: hidden; /* This is what "cuts off" the bottom of the pouch */
     display: flex;
     align-items: center;
+    overflow: hidden; 
 }
 
 .hero-container {
@@ -69,40 +69,56 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    height: 100%;
 }
 
 .hero-visual {
-    flex: 1.2; /* Takes up the left side */
-    height: 100%;
-    position: relative;
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-visual img {
-    height: 130%; /* Makes the pouch larger than the section so it cuts off */
-    position: absolute;
-    left: -5%; /* Pushes it slightly off the left edge */
-    bottom: -25%; /* Cuts off the bottom ~25% of the pouch */
+    max-height: 80vh; /* Shows the FULL pouch without cutting it off */
+    width: auto;
     object-fit: contain;
     filter: drop-shadow(30px 20px 50px rgba(10, 31, 68, 0.15));
     animation: softWiggle 4s infinite ease-in-out;
 }
 
 .hero-content {
-    flex: 1; /* Takes up the right side */
+    flex: 1;
     padding: 0 5%;
-    z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns text to the left of its container */
+    align-items: flex-start;
+    text-align: left;
 }
 
 .hero h1 { 
     font-size: clamp(60px, 10vw, 130px);
     line-height: 0.8; 
-    margin-bottom: 25px; 
+    margin-bottom: 15px; 
     letter-spacing: -3px;
     color: var(--navy);
+    font-family: 'Fredoka', sans-serif;
+}
+
+/* This is the new subheading styling */
+.hero-subtext {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 450px;
+    line-height: 1.3;
+}
+
+/* Makes your "Notify" paragraph bigger as requested */
+.notify-section p {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
 .coming-soon { 
@@ -250,18 +266,22 @@
         </div>
     </nav>
 
-    <section class="hero">
+   <section class="hero">
     <div class="hero-container">
-        <!-- The Left Side (Pouch) -->
+        <!-- The Pouch (Shows Fully) -->
         <div class="hero-visual">
-            <!-- PASTE YOUR DIRECT IMGUR .PNG LINK BELOW -->
+            <!-- Ensure your link ends in .png for transparency! -->
             <img src="https://i.postimg.cc/LX8BfrvC/Untitled-design.png" alt="ONLY. Dog Treats">
         </div>
 
-        <!-- The Right Side (Text) -->
+        <!-- The Text Section -->
         <div class="hero-content">
             <div class="coming-soon">COMING SOON</div>
             <h1>ONLY.</h1>
+            
+            <!-- This is your new subheading -->
+            <p class="hero-subtext">single-ingredient treats for the dogs we love.</p>
+            
             <a href="#notify" class="scroll-call">
                 NOTIFY ME
                 <i class="fas fa-arrow-down"></i>
