@@ -34,7 +34,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 15px 8%; 
-    background: var(--white);
+    background: #ffffff;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -44,15 +44,15 @@ nav {
 .logo { 
     display: flex; 
     align-items: center; 
-    gap: 12px; 
+    gap: 12px; /* Space between logo icon and text */
     font-size: 24px; 
     font-family: 'Fredoka', sans-serif;
     color: var(--navy);
-    text-decoration: none;
+    font-weight: 700;
 }
 
 .nav-logo-img {
-    height: 35px; /* Adjust this to make your paw logo the right size */
+    height: 35px; /* Adjust this number to make your logo bigger or smaller */
     width: auto;
 }
 
@@ -66,7 +66,9 @@ nav {
     letter-spacing: 1px;
 }
 
-.nav-links a:hover { color: #8a8acb; }
+.nav-links a:hover { 
+    color: #8a8acb; 
+}
 
 /* --- COMPLETE HERO STYLING --- */
 .hero {
