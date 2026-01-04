@@ -77,48 +77,33 @@ nav {
     overflow: hidden;
 }
 
+/* --- UPDATED HERO: LEFT-ALIGNED DESKTOP & STACKED MOBILE --- */
 .hero-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px; /* Limits width so things don't drift too far right */
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between; 
-    padding: 40px;
+    justify-content: flex-start; /* Pulls everything to the left */
+    gap: 60px; /* Space between text, pouch, and notify link */
+    padding: 40px 8%;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0 1 auto; /* Text doesn't grow, stays compact on left */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    text-align: left;
-}
-
-.hero h1 { 
-    font-size: clamp(60px, 10vw, 130px);
-    line-height: 0.8; 
-    margin-bottom: 15px; 
-    letter-spacing: -3px;
-    color: var(--navy);
-}
-
-.hero-subtext {
-    font-size: 22px;
-    margin-bottom: 30px;
-    max-width: 450px;
-    line-height: 1.4;
 }
 
 .hero-visual {
-    flex: 1;
+    flex: 0 1 auto;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-visual img {
-    max-height: 70vh; 
+    max-height: 60vh; /* Keeps bag visible but controlled */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(20px 20px 40px rgba(10, 31, 68, 0.1));
@@ -129,21 +114,52 @@ nav {
     text-decoration: none;
     color: var(--navy);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    transition: 0.3s;
+    white-space: nowrap; /* Keeps "NOTIFY ME" on one line */
 }
 
-/* Mobile Fix */
+/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 768px) {
-    .hero-container { flex-direction: column; text-align: center; padding: 40px 20px; }
-    .hero-content { align-items: center; text-align: center; order: 1; }
-    .hero-visual { order: 2; margin: 40px 0; }
-    .hero-visual img { max-height: 40vh; }
+    .hero { height: auto; padding: 60px 0; }
+    
+    .hero-container { 
+        flex-direction: column; 
+        text-align: center;
+        gap: 30px; 
+    }
+
+    .hero-content { 
+        order: 1; /* Text stays on top */
+        align-items: center; 
+    }
+
+    .scroll-call { 
+        order: 2; /* NOTIFY ME moves above pouch as requested */
+        margin-bottom: 20px;
+    }
+
+    .hero-visual { 
+        order: 3; /* Pouch moves to bottom */
+        height: 250px; /* Makes pouch smaller */
+        width: 100%;
+        overflow: hidden; /* This is what allows the "crop" */
+        display: flex;
+        align-items: flex-start; /* Keeps the top of the bag visible */
+    }
+
+    .hero-visual img { 
+        max-height: none; 
+        height: 140%; /* Scales image larger than container to ensure crop */
+        width: auto;
+        object-position: top; /* Ensures we crop the bottom, not the top */
+    }
 }
+
+
 /* --- END OF NEW HERO CSS --- */
 
         /* Notify Me Section */
@@ -323,7 +339,18 @@ nav {
     </style>
 </head>
 <body>
-
+<!-- THE HEADER SECTION -->
+<nav>
+    <div class="logo">
+        <!-- REPLACE THE LINK BELOW WITH YOUR LOGO ICON PNG -->
+        <img src="https://i.postimg.cc/jjxnDyS0/Untitled-design-(2)-copy.png" alt="Logo" class="nav-logo-img">
+        <span>ONLY.</span>
+    </div>
+    <div class="nav-links">
+        <a href="#about">ABOUT US</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+</nav>
     <nav>
         <div class="logo">ONLY.</div>
         <div class="nav-links">
@@ -332,22 +359,23 @@ nav {
         </div>
     </nav>
 
-   <section class="hero">
+  <section class="hero">
     <div class="hero-container">
         
-        <!-- Text Section -->
+        <!-- 1. Text Block -->
         <div class="hero-content">
             <div class="coming-soon">COMING SOON</div>
             <h1>ONLY.</h1>
             <p class="hero-subtext">single-ingredient treats for the dogs we love.</p>
         </div>
 
-        <!-- The Pouch -->
+        <!-- 2. The Pouch -->
         <div class="hero-visual">
-            <img src="https://i.postimg.cc/LX8BfrvC/Untitled-design.png" alt="ONLY. Dog Treats">
+            <!-- PASTE YOUR .PNG LINK HERE -->
+            <img src="YOUR_POUCH_LINK_HERE.png" alt="ONLY. Pouch">
         </div>
 
-        <!-- Scroll Link (Now easier to position on mobile) -->
+        <!-- 3. Notify Link -->
         <a href="#notify" class="scroll-call">
             NOTIFY ME
             <i class="fas fa-arrow-down"></i>
