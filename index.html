@@ -53,69 +53,77 @@
         nav .nav-links a:hover { color: #8a8acb; }
 
         /* Hero Section */
-        .hero {
-            min-height: 90vh;
-            background-color: var(--lavender);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 5%;
-        }
+      /* --- NEW HERO CSS --- */
+.hero {
+    height: 85vh; 
+    background-color: var(--lavender);
+    position: relative;
+    overflow: hidden; /* This is what "cuts off" the bottom of the pouch */
+    display: flex;
+    align-items: center;
+}
 
-        .hero .coming-soon { 
-            font-size: 14px; 
-            font-weight: 700; 
-            letter-spacing: 4px; 
-            margin-bottom: 10px; 
-            color: var(--navy);
-            opacity: 0.7;
-        }
+.hero-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
 
-        .hero h1 { font-size: 90px; line-height: 1; margin-bottom: 20px; }
+.hero-visual {
+    flex: 1.2; /* Takes up the left side */
+    height: 100%;
+    position: relative;
+}
 
-        .pouch-container {
-            width: 100%;
-            max-width: 500px;
-            margin: 20px 0;
-            transition: transform 0.5s ease-out;
-        }
-        
-        /* Subtle animation: the pouch "wiggles" slightly when the page loads */
-        .pouch-container img { 
-            width: 100%; 
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
-            animation: softWiggle 4s infinite ease-in-out;
-        }
+.hero-visual img {
+    height: 130%; /* Makes the pouch larger than the section so it cuts off */
+    position: absolute;
+    left: -5%; /* Pushes it slightly off the left edge */
+    bottom: -25%; /* Cuts off the bottom ~25% of the pouch */
+    object-fit: contain;
+    filter: drop-shadow(30px 20px 50px rgba(10, 31, 68, 0.15));
+    animation: softWiggle 4s infinite ease-in-out;
+}
 
-        @keyframes softWiggle {
-            0%, 100% { transform: rotate(-1deg) translateY(0); }
-            50% { transform: rotate(1deg) translateY(-10px); }
-        }
+.hero-content {
+    flex: 1; /* Takes up the right side */
+    padding: 0 5%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left of its container */
+}
 
-        .scroll-call {
-            margin-top: 30px;
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
+.hero h1 { 
+    font-size: clamp(60px, 10vw, 130px);
+    line-height: 0.8; 
+    margin-bottom: 25px; 
+    letter-spacing: -3px;
+    color: var(--navy);
+}
 
-        .scroll-call i {
-            animation: bounce 2s infinite;
-        }
+.coming-soon { 
+    font-size: 14px; 
+    font-weight: 700; 
+    letter-spacing: 4px; 
+    margin-bottom: 15px; 
+    color: var(--navy);
+    opacity: 0.6;
+}
 
-        @keyframes bounce { 
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
-            40% {transform: translateY(-8px);} 
-            60% {transform: translateY(-4px);} 
-        }
+.scroll-call {
+    text-decoration: none;
+    color: var(--navy);
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+/* --- END OF NEW HERO CSS --- */
 
         /* Notify Me Section */
         .notify-section { 
@@ -237,20 +245,24 @@
     </nav>
 
     <section class="hero">
-        <div class="coming-soon">COMING SOON</div>
-        <h1>ONLY.</h1>
-        
-        <!-- Pouch Image in Hero -->
-        <div class="pouch-container">
-            <!-- Replace 'pouch-image.png' with your image link -->
-            <img src="https://i.imgur.com/E5ps8a6.jpg" alt="ONLY. Dog Treat Pouch">
+    <div class="hero-container">
+        <!-- The Left Side (Pouch) -->
+        <div class="hero-visual">
+            <!-- PASTE YOUR DIRECT IMGUR .PNG LINK BELOW -->
+            <img src="https://i.imgur.com/E5ps8a6.png" alt="ONLY. Dog Treats">
         </div>
 
-        <a href="#notify" class="scroll-call">
-            NOTIFY ME
-            <i class="fas fa-arrow-down"></i>
-        </a>
-    </section>
+        <!-- The Right Side (Text) -->
+        <div class="hero-content">
+            <div class="coming-soon">COMING SOON</div>
+            <h1>ONLY.</h1>
+            <a href="#notify" class="scroll-call">
+                NOTIFY ME
+                <i class="fas fa-arrow-down"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
     <section id="notify" class="notify-section">
         <h2>No BS. High quality, single-ingredient treats for the dogs we love.</h2>
