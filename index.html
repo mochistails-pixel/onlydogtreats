@@ -248,12 +248,73 @@
         .contact a:hover { color: #8a8acb; border-color: var(--navy); }
 
         .footer { padding: 60px; text-align: center; font-size: 14px; opacity: 0.5; font-weight: 600; }
+/* --- UPDATED MOBILE OPTIMIZATION --- */
+@media (max-width: 768px) {
+    .hero {
+        height: auto; /* Allow the section to grow with content */
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 60px; }
-            .email-form { flex-direction: column; border-radius: 20px; }
-            button { width: 100%; }
-        }
+    .hero-container {
+        flex-direction: column; /* Stacks text on top of image */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 1; /* Puts the Logo and Subtext first */
+        align-items: center;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 70px; /* Smaller for mobile screens */
+        margin-bottom: 10px;
+    }
+
+    .hero-subtext {
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 100%;
+    }
+
+    .hero-visual {
+        order: 2; /* Puts the Pouch under the text */
+        width: 100%;
+        height: 350px; /* Fixed height for the bag area on mobile */
+        margin-bottom: 20px;
+    }
+
+    .hero-visual img {
+        max-height: 100%; /* Makes sure the bag fits the area */
+        width: auto;
+        left: 0; /* Centers it */
+        bottom: 0;
+        position: relative;
+    }
+
+    .scroll-call {
+        order: 3; /* Puts the "Notify Me" link at the very bottom */
+        margin-top: 20px;
+    }
+
+    /* Fix the Gallery for mobile so images aren't huge */
+    .gallery {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+    }
+
+    /* Make About section stack on mobile */
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+}
+       
     </style>
 </head>
 <body>
@@ -268,25 +329,25 @@
 
    <section class="hero">
     <div class="hero-container">
-        <!-- The Pouch (Shows Fully) -->
-        <div class="hero-visual">
-            <!-- Ensure your link ends in .png for transparency! -->
-            <img src="https://i.postimg.cc/LX8BfrvC/Untitled-design.png" alt="ONLY. Dog Treats">
-        </div>
-
-        <!-- The Text Section -->
+        
+        <!-- Text Section -->
         <div class="hero-content">
             <div class="coming-soon">COMING SOON</div>
             <h1>ONLY.</h1>
-            
-            <!-- This is your new subheading -->
-            <p class="hero-subtext">single-ingredient treats for the dogs we love</p>
-            
-            <a href="#notify" class="scroll-call">
-                NOTIFY ME
-                <i class="fas fa-arrow-down"></i>
-            </a>
+            <p class="hero-subtext">single-ingredient treats for the dogs we love.</p>
         </div>
+
+        <!-- The Pouch -->
+        <div class="hero-visual">
+            <img src="YOUR_PNG_LINK.png" alt="ONLY. Dog Treats">
+        </div>
+
+        <!-- Scroll Link (Now easier to position on mobile) -->
+        <a href="#notify" class="scroll-call">
+            NOTIFY ME
+            <i class="fas fa-arrow-down"></i>
+        </a>
+
     </div>
 </section>
 
