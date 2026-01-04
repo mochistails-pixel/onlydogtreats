@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONLY. | Single Ingredient Dog Treats</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0A1F44;
+            --lavender: #D8D8F6;
+            --off-white: #FAF9F6;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        
+        body { background-color: var(--off-white); color: var(--navy); overflow-x: hidden; }
+
+        /* Subtle Paw Animation */
+        .paw-print {
+            position: fixed;
+            font-size: 20px;
+            color: var(--lavender);
+            opacity: 0;
+            z-index: 999;
+            pointer-events: none;
+            animation: walk 10s infinite linear;
+        }
+
+        @keyframes walk {
+            0% { transform: translate(-50px, 100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translate(100vw, -50px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { font-weight: 900; font-size: 24px; letter-spacing: 1px; }
+
+        nav a { text-decoration: none; color: var(--navy); font-weight: 600; margin-left: 20px; transition: 0.3s; }
+        nav a:hover { color: var(--lavender); }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background-color: var(--lavender);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 { font-size: 80px; font-weight: 900; margin-bottom: 10px; }
+        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.8; }
+        .coming-soon { font-weight: bold; letter-spacing: 3px; margin-bottom: 10px; }
+
+        .scroll-down {
+            margin-top: 50px;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: bold;
+        }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+        /* Notify Me Section */
+        .notify-section { padding: 80px 5%; text-align: center; background: var(--white); }
+        .email-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        input[type="email"] {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid var(--lavender);
+            border-radius: 8px;
+            outline: none;
+        }
+        button {
+            padding: 15px 30px;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: var(--lavender); color: var(--navy); }
+
+        /* Product Gallery */
+        .gallery { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery img { width: 100%; border-radius: 15px; transition: transform 0.3s; }
+        .gallery img:hover { transform: scale(1.02); }
+
+        /* About Us */
+        .about { padding: 80px 5%; background: var(--lavender); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; text-align: center; }
+        .about-image img { max-width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about h2 { font-size: 40px; margin-bottom: 20px; }
+        .about p { line-height: 1.6; font-size: 18px; }
+
+        /* Contact */
+        .contact { padding: 100px 5%; text-align: center; }
+        .footer { padding: 40px; text-align: center; font-size: 14px; opacity: 0.6; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 50px; }
+            .email-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Subtle animated paws -->
+    <div class="paw-print" style="left: 10%; animation-delay: 0s;"><i class="fas fa-paw"></i></div>
+    <div class="paw-print" style="left: 30%; animation-delay: 3s;"><i class="fas fa-paw"></i></div>
+    <div class="paw-print" style="left: 80%; animation-delay: 6s;"><i class="fas fa-paw"></i></div>
+
+    <nav>
+        <div class="logo">ONLY.</div>
+        <div>
+            <a href="#about">ABOUT US</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="coming-soon">COMING SOON</div>
+        <h1>ONLY.</h1>
+        <p>No BS. No weird ingredients. Just one thing.</p>
+        <a href="#notify" class="scroll-down">
+            NOTIFY ME<br>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section id="notify" class="notify-section">
+        <h2>Be the first to know when we launch.</h2>
+        <p style="margin-bottom: 20px;">Join the pack for exclusive early access.</p>
+        <form class="email-form" id="emailForm">
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit" id="submitBtn">NOTIFY ME</button>
+        </form>
+        <div id="thankYou" style="display:none; margin-top: 20px; color: green; font-weight: bold;">
+            Wagging tails! You're on the list.
+        </div>
+    </section>
+
+    <section class="gallery">
+        <!-- REPLACE WITH YOUR UPLOADED IMAGE URLS -->
+        <img src="packaging_mockup.jpg" alt="ONLY. Packaging">
+        <img src="lifestyle_product.jpg" alt="ONLY. Treats">
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-image">
+             <!-- REPLACE WITH YOUR UPLOADED PHOTO OF YOU AND MOCHI -->
+            <img src="mochi_and_me.jpg" alt="Founder and Mochi">
+        </div>
+        <div class="about-text">
+            <h2>Our Story</h2>
+            <p>
+                I'm a dog owner, dog trainer, and dog walker—so dogs are my <strong>LIFE</strong>, especially my own pup, Mochi. 
+                <br><br>
+                I find it frustrating when looking for delicious, high-quality, and affordable dog treats that everything always has some weird ingredients in it. I know it's not good for them, whether it's about overall health, dental health, or unnecessary grains. 
+                <br><br>
+                I wanted to create a single ingredient dog treat brand so that no matter which product you buy, you get what you see—just one single ingredient per product. It’s ONLY the best for our dogs. I plan to launch in 2026 if all goes well and hope to make a ton of dogs happy with delicious, clean treats!
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Wanna chat?</h2>
+        <p>Email us at hello@onlytreats.com</p>
+        <p style="margin-top: 20px; font-size: 24px; font-weight: 900;">ONLY.</p>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 ONLY. Dog Treats. All Rights Reserved.
+    </div>
+
+    <script>
+        // Google Sheets Integration Script
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        const form = document.getElementById('emailForm');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            document.getElementById('submitBtn').innerText = 'SENDING...';
+            
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    document.getElementById('emailForm').style.display = 'none';
+                    document.getElementById('thankYou').style.display = 'block';
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
