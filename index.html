@@ -3,137 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ONLY. | Single Ingredient Dog Treats</title>
+    <title>ONLY. | One Ingredient Dog Treats</title>
+    <!-- Importing a rounded, fun font for the logo and headers -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Lexend:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --navy: #0A1F44;
-            --lavender: #D8D8F6;
+            --lavender: #E6E6FA;
             --off-white: #FAF9F6;
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body { background-color: var(--off-white); color: var(--navy); overflow-x: hidden; }
-
-        /* Subtle Paw Animation */
-        .paw-print {
-            position: fixed;
-            font-size: 20px;
-            color: var(--lavender);
-            opacity: 0;
-            z-index: 999;
-            pointer-events: none;
-            animation: walk 10s infinite linear;
+        body { 
+            background-color: var(--off-white); 
+            color: var(--navy); 
+            font-family: 'Lexend', sans-serif;
+            overflow-x: hidden; 
         }
 
-        @keyframes walk {
-            0% { transform: translate(-50px, 100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.3; }
-            90% { opacity: 0.3; }
-            100% { transform: translate(100vw, -50px) rotate(360deg); opacity: 0; }
-        }
+        h1, h2, .logo { font-family: 'Fredoka', sans-serif; font-weight: 700; }
 
         /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 20px 8%;
             background: var(--white);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 2px solid var(--lavender);
         }
 
-        .logo { font-weight: 900; font-size: 24px; letter-spacing: 1px; }
+        .logo { font-size: 28px; letter-spacing: -1px; }
 
-        nav a { text-decoration: none; color: var(--navy); font-weight: 600; margin-left: 20px; transition: 0.3s; }
-        nav a:hover { color: var(--lavender); }
+        nav .nav-links a { 
+            text-decoration: none; 
+            color: var(--navy); 
+            font-weight: 600; 
+            margin-left: 30px; 
+            transition: 0.3s; 
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        nav .nav-links a:hover { color: #8a8acb; }
 
         /* Hero Section */
         .hero {
-            height: 90vh;
+            min-height: 90vh;
             background-color: var(--lavender);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 10%;
+            padding: 60px 5%;
         }
 
-        .hero h1 { font-size: 80px; font-weight: 900; margin-bottom: 10px; }
-        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.8; }
-        .coming-soon { font-weight: bold; letter-spacing: 3px; margin-bottom: 10px; }
+        .hero .coming-soon { 
+            font-size: 14px; 
+            font-weight: 700; 
+            letter-spacing: 4px; 
+            margin-bottom: 10px; 
+            color: var(--navy);
+            opacity: 0.7;
+        }
 
-        .scroll-down {
-            margin-top: 50px;
-            animation: bounce 2s infinite;
-            cursor: pointer;
+        .hero h1 { font-size: 90px; line-height: 1; margin-bottom: 20px; }
+
+        .pouch-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 20px 0;
+            transition: transform 0.5s ease-out;
+        }
+        
+        /* Subtle animation: the pouch "wiggles" slightly when the page loads */
+        .pouch-container img { 
+            width: 100%; 
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+            animation: softWiggle 4s infinite ease-in-out;
+        }
+
+        @keyframes softWiggle {
+            0%, 100% { transform: rotate(-1deg) translateY(0); }
+            50% { transform: rotate(1deg) translateY(-10px); }
+        }
+
+        .scroll-call {
+            margin-top: 30px;
             text-decoration: none;
             color: var(--navy);
-            font-weight: bold;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
         }
 
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+        .scroll-call i {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce { 
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+            40% {transform: translateY(-8px);} 
+            60% {transform: translateY(-4px);} 
+        }
 
         /* Notify Me Section */
-        .notify-section { padding: 80px 5%; text-align: center; background: var(--white); }
-        .email-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        .notify-section { 
+            padding: 100px 5%; 
+            text-align: center; 
+            background: var(--white); 
+        }
+        
+        .notify-section h2 { font-size: 36px; margin-bottom: 15px; }
+
+        .email-form { 
+            max-width: 500px; 
+            margin: 40px auto 0; 
+            display: flex; 
+            gap: 10px; 
+            background: var(--off-white);
+            padding: 10px;
+            border-radius: 50px;
+            border: 2px solid var(--lavender);
+        }
+
         input[type="email"] {
             flex: 1;
-            padding: 15px;
-            border: 2px solid var(--lavender);
-            border-radius: 8px;
+            padding: 15px 25px;
+            border: none;
+            background: transparent;
             outline: none;
+            font-size: 16px;
         }
+
         button {
-            padding: 15px 30px;
+            padding: 15px 35px;
             background: var(--navy);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 40px;
+            font-weight: 700;
+            font-family: 'Fredoka', sans-serif;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
-        button:hover { background: var(--lavender); color: var(--navy); }
+
+        /* Reactive Hover Effect */
+        button:hover { 
+            background: var(--lavender); 
+            color: var(--navy);
+            transform: scale(1.05);
+        }
 
         /* Product Gallery */
-        .gallery { padding: 80px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .gallery img { width: 100%; border-radius: 15px; transition: transform 0.3s; }
-        .gallery img:hover { transform: scale(1.02); }
+        .gallery { 
+            padding: 80px 8%; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 40px; 
+            background: var(--off-white);
+        }
+        .gallery img { 
+            width: 100%; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
 
         /* About Us */
-        .about { padding: 80px 5%; background: var(--lavender); display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
-        .about-text { flex: 1; min-width: 300px; }
+        .about { 
+            padding: 100px 8%; 
+            background: var(--lavender); 
+            display: flex; 
+            flex-wrap: wrap; 
+            align-items: center; 
+            gap: 60px; 
+        }
+        .about-text { flex: 1.2; min-width: 300px; }
         .about-image { flex: 1; min-width: 300px; text-align: center; }
-        .about-image img { max-width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .about h2 { font-size: 40px; margin-bottom: 20px; }
-        .about p { line-height: 1.6; font-size: 18px; }
+        .about-image img { 
+            max-width: 100%; 
+            border-radius: 30px; 
+            border: 8px solid white;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+        }
+        .about h2 { font-size: 48px; margin-bottom: 25px; }
+        .about p { line-height: 1.8; font-size: 19px; color: rgba(10, 31, 68, 0.85); }
 
         /* Contact */
-        .contact { padding: 100px 5%; text-align: center; }
-        .footer { padding: 40px; text-align: center; font-size: 14px; opacity: 0.6; }
+        .contact { 
+            padding: 120px 5%; 
+            text-align: center; 
+            background: var(--white);
+        }
+        .contact h2 { font-size: 40px; margin-bottom: 20px; }
+        .contact a { 
+            color: var(--navy); 
+            font-size: 24px; 
+            text-decoration: none; 
+            font-weight: 600;
+            border-bottom: 3px solid var(--lavender);
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
+        .contact a:hover { color: #8a8acb; border-color: var(--navy); }
+
+        .footer { padding: 60px; text-align: center; font-size: 14px; opacity: 0.5; font-weight: 600; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 50px; }
-            .email-form { flex-direction: column; }
+            .hero h1 { font-size: 60px; }
+            .email-form { flex-direction: column; border-radius: 20px; }
+            button { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Subtle animated paws -->
-    <div class="paw-print" style="left: 10%; animation-delay: 0s;"><i class="fas fa-paw"></i></div>
-    <div class="paw-print" style="left: 30%; animation-delay: 3s;"><i class="fas fa-paw"></i></div>
-    <div class="paw-print" style="left: 80%; animation-delay: 6s;"><i class="fas fa-paw"></i></div>
-
     <nav>
         <div class="logo">ONLY.</div>
-        <div>
+        <div class="nav-links">
             <a href="#about">ABOUT US</a>
             <a href="#contact">CONTACT</a>
         </div>
@@ -142,60 +239,67 @@
     <section class="hero">
         <div class="coming-soon">COMING SOON</div>
         <h1>ONLY.</h1>
-        <p>No BS. No weird ingredients. Just one thing.</p>
-        <a href="#notify" class="scroll-down">
-            NOTIFY ME<br>
-            <i class="fas fa-chevron-down"></i>
+        
+        <!-- Pouch Image in Hero -->
+        <div class="pouch-container">
+            <!-- Replace 'pouch-image.png' with your image link -->
+            <img src="pouch-image.png" alt="ONLY. Dog Treat Pouch">
+        </div>
+
+        <a href="#notify" class="scroll-call">
+            NOTIFY ME
+            <i class="fas fa-arrow-down"></i>
         </a>
     </section>
 
     <section id="notify" class="notify-section">
-        <h2>Be the first to know when we launch.</h2>
-        <p style="margin-bottom: 20px;">Join the pack for exclusive early access.</p>
+        <h2>No BS. No weird sh*t.</h2>
+        <p>High quality, single-ingredient treats for the dogs we love.</p>
+        
         <form class="email-form" id="emailForm">
-            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
             <button type="submit" id="submitBtn">NOTIFY ME</button>
         </form>
-        <div id="thankYou" style="display:none; margin-top: 20px; color: green; font-weight: bold;">
-            Wagging tails! You're on the list.
+        <div id="thankYou" style="display:none; margin-top: 20px; color: var(--navy); font-weight: bold; font-family: 'Fredoka';">
+            Wagging tails! You're on the list for 2026.
         </div>
     </section>
 
     <section class="gallery">
-        <!-- REPLACE WITH YOUR UPLOADED IMAGE URLS -->
-        <img src="packaging_mockup.jpg" alt="ONLY. Packaging">
-        <img src="lifestyle_product.jpg" alt="ONLY. Treats">
+        <!-- Using the Product Images referenced -->
+        <img src="product-image-1.jpg" alt="ONLY. Chicken Breast">
+        <img src="product-image-2.jpg" alt="ONLY. Sweet Potato">
     </section>
 
     <section id="about" class="about">
         <div class="about-image">
-             <!-- REPLACE WITH YOUR UPLOADED PHOTO OF YOU AND MOCHI -->
-            <img src="mochi_and_me.jpg" alt="Founder and Mochi">
+            <!-- Image of You and Mochi -->
+            <img src="mochi-and-owner.jpg" alt="Me and Mochi">
         </div>
         <div class="about-text">
             <h2>Our Story</h2>
             <p>
-                I'm a dog owner, dog trainer, and dog walker—so dogs are my <strong>LIFE</strong>, especially my own pup, Mochi. 
+                I'm a dog owner, dog trainer, and dog walker—so dogs are my <strong>LIFE</strong>, especially my own pup Mochi. 
                 <br><br>
-                I find it frustrating when looking for delicious, high-quality, and affordable dog treats that everything always has some weird ingredients in it. I know it's not good for them, whether it's about overall health, dental health, or unnecessary grains. 
+                I find it frustrating when looking for delicious, high-quality and affordable dog treats that everything always has some weird ingredients in it where I know it's not good for the dog, whether it's about overall health or dental health. Grains, whatnot. 
                 <br><br>
-                I wanted to create a single ingredient dog treat brand so that no matter which product you buy, you get what you see—just one single ingredient per product. It’s ONLY the best for our dogs. I plan to launch in 2026 if all goes well and hope to make a ton of dogs happy with delicious, clean treats!
+                So, I wanted to create a single ingredient dog treat brand so that no matter which product you buy, you get what you see—just one single ingredient per product. It's only the best for our dogs. I plan to launch in 2026 if all goes well and hope to make a ton of dogs happy with delicious clean treats!
             </p>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Wanna chat?</h2>
-        <p>Email us at hello@onlytreats.com</p>
-        <p style="margin-top: 20px; font-size: 24px; font-weight: 900;">ONLY.</p>
+        <h2>Let's fetch.</h2>
+        <p style="margin-bottom: 20px;">Questions? Partnerships? Just want to see photos of Mochi?</p>
+        <a href="mailto:mochistails@gmail.com">mochistails@gmail.com</a>
     </section>
 
     <div class="footer">
-        &copy; 2026 ONLY. Dog Treats. All Rights Reserved.
+        &copy; 2026 ONLY. DOG TREATS. THE GOOD STUFF.
     </div>
 
     <script>
-        // Google Sheets Integration Script
+        // Google Sheets Integration
         const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
         const form = document.getElementById('emailForm');
 
@@ -208,7 +312,10 @@
                     document.getElementById('emailForm').style.display = 'none';
                     document.getElementById('thankYou').style.display = 'block';
                 })
-                .catch(error => console.error('Error!', error.message));
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('Something went wrong. Please try again!');
+                });
         });
     </script>
 </body>
