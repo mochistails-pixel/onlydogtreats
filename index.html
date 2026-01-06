@@ -193,8 +193,9 @@
             min-width: 0;
         }
 
+        /* Spacing added here to bottom margin */
         .captcha-box {
-            margin: 15px 0;
+            margin: 15px 0 35px 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -217,12 +218,12 @@
         }
         button:hover { background: var(--lavender); color: var(--navy); transform: scale(1.05); }
 
+        /* Increased top margin here as well */
         .promo-subtext {
             font-size: 13px;
-            margin-top: 15px;
             opacity: 0.7;
             max-width: 450px;
-            margin: 15px auto 0;
+            margin: 35px auto 0; 
             line-height: 1.4;
             font-weight: 600;
         }
@@ -276,6 +277,9 @@
             .email-form { padding: 5px; }
             input[type="email"] { font-size: 14px; padding: 10px; }
             button { padding: 12px 20px; font-size: 14px; }
+            
+            .captcha-box { margin-bottom: 25px; }
+            .promo-subtext { margin-top: 25px; }
 
             .gallery { grid-template-columns: 1fr; padding: 40px 5%; }
             .about { flex-direction: column; text-align: center; padding: 60px 5%; }
