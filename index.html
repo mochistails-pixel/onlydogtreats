@@ -227,8 +227,8 @@
         }
 
         /* --- GALLERY & ABOUT --- */
-        .gallery { padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; background: var(--off-white); }
-        .gallery img { width: 100%; border-radius: 24px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .gallery { padding: 80px 8%; display: flex; justify-content: center; background: var(--off-white); }
+        .gallery img { width: 100%; max-width: 1200px; border-radius: 24px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
         .about { padding: 100px 8%; background: var(--lavender); display: flex; flex-wrap: wrap; align-items: center; gap: 60px; }
         .about-text { flex: 1.2; min-width: 300px; }
@@ -255,6 +255,7 @@
 
             .scroll-call { order: 2; margin-bottom: 20px; }
 
+            /* Small, Cropped Pouch on Mobile */
             .hero-visual { 
                 order: 3; 
                 width: 100%;
@@ -279,7 +280,7 @@
             .captcha-box { margin-bottom: 25px; }
             .promo-subtext { margin-top: 25px; }
 
-            .gallery { grid-template-columns: 1fr; padding: 40px 5%; }
+            .gallery { padding: 40px 5%; }
             .about { flex-direction: column; text-align: center; padding: 60px 5%; }
             .about h2 { font-size: 32px; }
         }
@@ -301,6 +302,7 @@
 
 <section class="hero">
     <div class="hero-container">
+        <!-- Text & Action -->
         <div class="hero-content">
             <div class="coming-soon" style="font-size: 14px; letter-spacing: 4px; margin-bottom: 10px; opacity: 0.7; font-weight: bold;">COMING SOON</div>
             <h1>ONLY.</h1>
@@ -312,8 +314,9 @@
             </a>
         </div>
 
+        <!-- The pouch (New Imagery) -->
         <div class="hero-visual">
-            <img src="https://i.postimg.cc/LX8BfrvC/Untitled-design.png" alt="ONLY. Dog Treats">
+            <img src="https://i.postimg.cc/xdvCj3Qd/Untitled-design-(3).png" alt="ONLY. Dog Treats">
         </div>
     </div>
 </section>
@@ -341,8 +344,9 @@
     </div>
 </section>
 
+<!-- Product Imagery Section (New Imagery) -->
 <section class="gallery">
-    <img src="https://i.imgur.com/5ortFjE.jpg" alt="ONLY. Chicken Breast">
+    <img src="https://i.postimg.cc/B6JvjPZK/Untitled-design-(2).png" alt="ONLY. Product Range">
 </section>
 
 <section id="about" class="about">
@@ -352,17 +356,17 @@
     <div class="about-text">
         <h2>Our Story</h2>
         <p>
-            I'm a dog owner, dog trainer, and dog walker... so dogs are my <strong>LIFE</strong>, especially my own pup, Mochi. 
+            I'm a dog owner, dog trainer, and dog walker... so dogs are my <strong>LIFE</strong>, especially my own pup Mochi. 
             <br><br>
             Like many dog owners, I find it incredibly frustrating to find treats that checked all the boxes: delicious, high-quality, and affordable. It seems like every bag I pick up is full of 'weird' ingredients, grains, and fillers that I know aren’t good for my dog’s overall or dental health.            
             <br><br>
-            That’s why I want to create a brand where transparency is the only ingredient. My philosophy is simple: one product, ONLY one ingredient. No fillers, no surprises; just the best for our dogs. I'm working hard to bring these clean, delicious treats to you in 2026!        
+            That’s why I want to create a brand where transparency is the only ingredient. My philosophy is simple: One product, ONLY one ingredient. No fillers, no surprises; just the best for our dogs. I'm working hard to bring these clean, delicious treats to you in 2026!        
         </p>
     </div>
 </section>
 
 <section id="contact" class="contact">
-    <h2>Woof.</h2>
+    <h2>Let's fetch.</h2>
     <p style="margin-bottom: 20px;">Questions? Partnerships? Just want to see photos of Mochi?</p>
     <a href="mailto:mochistails@gmail.com">mochistails@gmail.com</a>
 </section>
