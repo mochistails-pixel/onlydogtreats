@@ -166,7 +166,7 @@
         }
         
         .notify-section h2 { font-size: clamp(24px, 4vw, 36px); max-width: 800px; margin: 0 auto 15px; line-height: 1.2; }
-        .notify-section p { font-size: 20px; margin-bottom: 20px; font-weight: 400; opacity: 0.9; }
+        .notify-section .sub-headline { font-size: 20px; margin-bottom: 20px; font-weight: 400; opacity: 0.9; max-width: 650px; margin-left: auto; margin-right: auto; }
 
         .email-form-container {
             max-width: 550px;
@@ -319,12 +319,13 @@
 </section>
 
 <section id="notify" class="notify-section">
-    <h2>We're building the best treat brand in the world. Help us prove it.</h2>
+    <h2>We're building the best treat brand in the world.</h2>
+    <p class="sub-headline">And our early supporters get the best deal. Join the list for an exclusive launch discount.</p>
     
     <div class="email-form-container">
         <form class="email-form" id="emailForm">
             <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
-            <button type="submit" id="submitBtn">keep me updated!</button>
+            <button type="submit" id="submitBtn">Secure My Discount</button>
         </form>
 
         <div class="captcha-box">
@@ -332,7 +333,7 @@
             <label for="humanCheck">I am a human (and I love dogs)</label>
         </div>
 
-        <p class="promo-subtext">we'll email you with launch updates, and <strong>the first 50 sign-ups will get a sampler box of treats for FREE!... if we launch ;)</strong></p>
+        <p class="promo-subtext">we'll email you with launch updates, plus <strong>the first 50 sign-ups will get a sampler box of treats for FREE!... if we launch ;)</strong></p>
 
         <div id="thankYou" style="display:none; margin-top: 20px; color: var(--navy); font-weight: bold; font-family: 'Fredoka';">
             Wagging tails! You're on the list.
@@ -346,7 +347,6 @@
 
 <section id="about" class="about">
     <div class="about-image">
-        <!-- New Image of You and Mochi -->
         <img src="https://i.imgur.com/E2psyfj.jpg" alt="Me and Mochi">
     </div>
     <div class="about-text">
@@ -401,7 +401,7 @@
             .catch(error => {
                 console.error('Error!', error.message);
                 alert('Something went wrong. Please try again!');
-                document.getElementById('submitBtn').innerText = 'keep me updated!';
+                document.getElementById('submitBtn').innerText = 'Secure My Discount';
             });
     });
 </script>
