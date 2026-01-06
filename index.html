@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This adds your logo to the browser tab and bookmarks -->
-<link rel="icon" type="image/png" href="https://i.postimg.cc/jjxnDyS0/Untitled-design-(2)-copy.png">
-    <link rel="apple-touch-icon" href="https://i.postimg.cc/jjxnDyS0/Untitled-design-(2)-copy.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONLY. | Single-Ingredient Dog Treats</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/jjxnDyS0/Untitled-design-(2)-copy.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/jjxnDyS0/Untitled-design-(2)-copy.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Lexend:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -158,17 +160,20 @@
 
         /* --- NOTIFY SECTION --- */
         .notify-section { 
-            padding: 100px 5%; 
+            padding: 120px 5%; 
             text-align: center; 
             background: var(--white); 
         }
         
-        .notify-section h2 { font-size: 36px; margin-bottom: 15px; }
-        .notify-section p { font-size: 24px; margin-bottom: 20px; font-weight: 400; opacity: 0.9; }
+        .notify-section h2 { font-size: clamp(24px, 4vw, 36px); max-width: 800px; margin: 0 auto 15px; line-height: 1.2; }
+        .notify-section p { font-size: 20px; margin-bottom: 20px; font-weight: 400; opacity: 0.9; }
+
+        .email-form-container {
+            max-width: 550px;
+            margin: 40px auto 0;
+        }
 
         .email-form { 
-            max-width: 550px; 
-            margin: 40px auto 0; 
             display: flex; 
             align-items: center;
             background: var(--off-white);
@@ -185,7 +190,17 @@
             outline: none; 
             font-size: 16px; 
             color: var(--navy);
-            min-width: 0; /* Prevents input from pushing button out */
+            min-width: 0;
+        }
+
+        .captcha-box {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         button {
@@ -201,6 +216,16 @@
             white-space: nowrap;
         }
         button:hover { background: var(--lavender); color: var(--navy); transform: scale(1.05); }
+
+        .promo-subtext {
+            font-size: 13px;
+            margin-top: 15px;
+            opacity: 0.7;
+            max-width: 450px;
+            margin: 15px auto 0;
+            line-height: 1.4;
+            font-weight: 600;
+        }
 
         /* --- GALLERY & ABOUT --- */
         .gallery { padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; background: var(--off-white); }
@@ -231,7 +256,6 @@
 
             .scroll-call { order: 2; margin-bottom: 20px; }
 
-            /* Smaller, Cropped Pouch */
             .hero-visual { 
                 order: 3; 
                 width: 100%;
@@ -249,8 +273,7 @@
                 object-position: top;
             }
 
-            /* Email Form Mobile Fix */
-            .email-form { padding: 5px; margin-top: 30px; }
+            .email-form { padding: 5px; }
             input[type="email"] { font-size: 14px; padding: 10px; }
             button { padding: 12px 20px; font-size: 14px; }
 
@@ -276,19 +299,17 @@
 
 <section class="hero">
     <div class="hero-container">
-        <!-- Text & Action -->
         <div class="hero-content">
             <div class="coming-soon" style="font-size: 14px; letter-spacing: 4px; margin-bottom: 10px; opacity: 0.7; font-weight: bold;">COMING SOON</div>
             <h1>ONLY.</h1>
             <p class="hero-subtext">single-ingredient treats for the dogs we love</p>
             
             <a href="#notify" class="scroll-call">
-                NOTIFY ME
+                JOIN THE TEAM
                 <i class="fas fa-arrow-down"></i>
             </a>
         </div>
 
-        <!-- The pouch -->
         <div class="hero-visual">
             <img src="https://i.postimg.cc/LX8BfrvC/Untitled-design.png" alt="ONLY. Dog Treats">
         </div>
@@ -296,15 +317,24 @@
 </section>
 
 <section id="notify" class="notify-section">
-    <h2>No BS. High quality.</h2>
-    <p>Get notified when we launch!</p>
+    <h2>We're building the best treat brand in the world. Help us prove it.</h2>
     
-    <form class="email-form" id="emailForm">
-        <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
-        <button type="submit" id="submitBtn">NOTIFY ME</button>
-    </form>
-    <div id="thankYou" style="display:none; margin-top: 20px; color: var(--navy); font-weight: bold; font-family: 'Fredoka';">
-        Wagging tails! You're on the list for 2026.
+    <div class="email-form-container">
+        <form class="email-form" id="emailForm">
+            <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="submit" id="submitBtn">Join the Launch Team</button>
+        </form>
+
+        <div class="captcha-box">
+            <input type="checkbox" id="humanCheck">
+            <label for="humanCheck">I am a human (and I love dogs)</label>
+        </div>
+
+        <p class="promo-subtext">we'll email you with launch updates, and the first 50 sign-ups will get the first batch of treats for FREE!</p>
+
+        <div id="thankYou" style="display:none; margin-top: 20px; color: var(--navy); font-weight: bold; font-family: 'Fredoka';">
+            Wagging tails! You're on the list.
+        </div>
     </div>
 </section>
 
@@ -346,19 +376,29 @@
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbysJoVLCqqTzSYHYf6nTI7uBgDAftVpQhfG7vkltHmIkgEtGZZIrGZ98yJIiNqxzqeR/exec';
     const form = document.getElementById('emailForm');
+    const humanCheck = document.getElementById('humanCheck');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
+
+        if (!humanCheck.checked) {
+            alert("Please check the 'I am a human' box to continue!");
+            return;
+        }
+
         document.getElementById('submitBtn').innerText = 'SENDING...';
         
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                document.getElementById('emailForm').style.display = 'none';
+                form.style.display = 'none';
+                document.querySelector('.captcha-box').style.display = 'none';
+                document.querySelector('.promo-subtext').style.display = 'none';
                 document.getElementById('thankYou').style.display = 'block';
             })
             .catch(error => {
                 console.error('Error!', error.message);
                 alert('Something went wrong. Please try again!');
+                document.getElementById('submitBtn').innerText = 'Join the Launch Team';
             });
     });
 </script>
