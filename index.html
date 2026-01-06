@@ -193,7 +193,6 @@
             min-width: 0;
         }
 
-        /* Spacing added here to bottom margin */
         .captcha-box {
             margin: 15px 0 35px 0;
             display: flex;
@@ -218,11 +217,10 @@
         }
         button:hover { background: var(--lavender); color: var(--navy); transform: scale(1.05); }
 
-        /* Increased top margin here as well */
         .promo-subtext {
             font-size: 13px;
             opacity: 0.7;
-            max-width: 450px;
+            max-width: 480px;
             margin: 35px auto 0; 
             line-height: 1.4;
             font-weight: 600;
@@ -309,7 +307,7 @@
             <p class="hero-subtext">single-ingredient treats for the dogs we love</p>
             
             <a href="#notify" class="scroll-call">
-                JOIN THE TEAM
+                NOTIFY ME (and my dog)
                 <i class="fas fa-arrow-down"></i>
             </a>
         </div>
@@ -326,7 +324,7 @@
     <div class="email-form-container">
         <form class="email-form" id="emailForm">
             <input type="email" name="email" id="emailInput" placeholder="Enter your email" required>
-            <button type="submit" id="submitBtn">Join the Launch Team</button>
+            <button type="submit" id="submitBtn">keep me updated!</button>
         </form>
 
         <div class="captcha-box">
@@ -334,7 +332,7 @@
             <label for="humanCheck">I am a human (and I love dogs)</label>
         </div>
 
-        <p class="promo-subtext">we'll email you with launch updates, and the first 50 sign-ups will get the first batch of treats for FREE!</p>
+        <p class="promo-subtext">we'll email you with launch updates, and <strong>the first 50 sign-ups will get the first batch of treats for FREE!</strong></p>
 
         <div id="thankYou" style="display:none; margin-top: 20px; color: var(--navy); font-weight: bold; font-family: 'Fredoka';">
             Wagging tails! You're on the list.
@@ -402,7 +400,7 @@
             .catch(error => {
                 console.error('Error!', error.message);
                 alert('Something went wrong. Please try again!');
-                document.getElementById('submitBtn').innerText = 'Join the Launch Team';
+                document.getElementById('submitBtn').innerText = 'keep me updated!';
             });
     });
 </script>
